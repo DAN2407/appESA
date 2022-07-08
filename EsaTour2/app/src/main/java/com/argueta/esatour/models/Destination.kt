@@ -11,6 +11,6 @@ data class Destination (
     @ColumnInfo(name = "description ") @SerializedName("description ") val description : String,
     @ColumnInfo(name = "photo") @SerializedName("photo") val photo : String,
     @ColumnInfo(name = "ubication") @SerializedName("ubication") val ubication : String,
-    @ColumnInfo(name = "rating") @SerializedName("rating ") val rating : Number,
+    @ColumnInfo(name = "rating") @SerializedName("rating ") val rating : String,
     @ColumnInfo(name = "category") @SerializedName("category") val category: String,
 )

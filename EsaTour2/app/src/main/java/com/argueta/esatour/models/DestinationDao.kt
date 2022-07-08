@@ -1,6 +1,9 @@
 package com.argueta.esatour.models
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 
 @Dao
@@ -9,11 +12,6 @@ interface DestinationDao {
     fun getAllDestinations(): List<Destination>
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun insertWord(destination: Destination)
+    suspend fun insertDestination(destination: Destination)
 
-    @Update
-    suspend fun updateWord(destination: Destination)
-
-    @Delete
-    suspend fun deleteWord(destination: Destination)
 }

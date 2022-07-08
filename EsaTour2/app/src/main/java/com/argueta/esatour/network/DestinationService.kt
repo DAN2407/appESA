@@ -13,4 +13,7 @@ interface DestinationService {
 
     @POST("/login")
     suspend fun login(@Body credentials: LoginRequest): LoginResponse
+
+    @POST("/register")
+    suspend fun register(@Body credentials: LoginRequest): LoginResponse
 }

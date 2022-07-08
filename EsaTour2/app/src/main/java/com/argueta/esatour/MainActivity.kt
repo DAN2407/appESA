@@ -35,11 +35,7 @@ class DestinationViewModel (private val repository: DestinationRepository): View
             )
         }
     }
-    fun addDestination(destination: Destination){
-        viewModelScope.launch(Dispatchers.IO){
-            repository.getAllDestinations()
-        }
-    }
+
 
     sealed class DestinationUiState {
         object Loading : DestinationUiState()
