@@ -17,15 +17,17 @@ class EsaTourApplication : Application() {
     }
 
     private fun getApiService() = with(RetrofitInstance){
+        setToken(getToken())
         getDestinationService()
     }
 
     fun getDestinationRepository() =
         DestinationRepository(dataBase, getApiService())
 
-    fun getLoginRepository() = LoginRepository(getApiService())
+    fun getLoginRepository() =
+        LoginRepository(getApiService())
 
-    private fun getToken() = prefs.getString(USER_TOKEN, "")!!
+    private fun getToken() : String = prefs.getString(USER_TOKEN, "")!!
 
     fun isUserLogin() = getToken() != ""
 

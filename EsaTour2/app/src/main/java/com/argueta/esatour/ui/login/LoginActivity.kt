@@ -15,7 +15,7 @@ import com.argueta.esatour.ui.ViewModelFactory
 class LoginActivity: AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
-    private val app by lazy {
+     val app by lazy {
         application as EsaTourApplication
     }
 

@@ -12,6 +12,6 @@ interface DestinationDao {
     fun getAllDestinations(): List<Destination>
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun insertDestination(destination: Destination)
+    suspend fun insertDestination(destination: List<Destination>)
 
 }

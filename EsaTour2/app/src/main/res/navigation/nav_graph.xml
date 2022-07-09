@@ -8,7 +8,12 @@
 
     <fragment
         android:id="@+id/destinationListFragment"
-        android:name="com.argueta.esatour.DestinationListFragment"
+        android:name="com.argueta.esatour.ui.destination.DestinationListFragment"
         tools:layout="@layout/fragment_destination_list"
         android:label="WordListFragment" />
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.argueta.esatour.ui.login.LoginActivity"
+        android:label="LoginActivity" />
 </navigation>

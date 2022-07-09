@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class LoginViewModel (private val repository: LoginRepository ) : ViewModel() {
-    val userField = MutableLiveData("")
+    val usernameField = MutableLiveData("")
     val passwordField = MutableLiveData("")
 
     private val _status = MutableLiveData<LoginUiStatus>(LoginUiStatus.Resume)
@@ -22,12 +22,12 @@ class LoginViewModel (private val repository: LoginRepository ) : ViewModel() {
         viewModelScope.launch(Dispatchers.IO){
             _status.postValue(
                 when (val response = repository.login(
-                    userField.value.toString(),
+                    usernameField.value.toString(),
                     passwordField.value.toString()
                 )) {
                     is ApiResponse.Error -> LoginUiStatus.Error(response.exception)
                     is ApiResponse.Success -> LoginUiStatus.Success(response.data)
-                    is ApiResponse.ErrorWithMessage -> LoginUiStatus.Resume
+                    is ApiResponse.ErrorWithMessage -> LoginUiStatus.Error(Exception(response.message))
                 }
             )
         }

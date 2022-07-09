@@ -22,4 +22,6 @@ class LoginRepository(private val api: DestinationService) {
             return ApiResponse.Error(e)
         }
     }
+
+
 }

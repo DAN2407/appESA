@@ -3,7 +3,10 @@
     package="com.argueta.esatour">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".EsaTourApplication"
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/EsaTour"
@@ -11,8 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EsaTour">
         <activity
-            android:name="com.argueta.esatour.MainActivity"
-            android:exported="true">
+            android:name="com.argueta.esatour.ui.login.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EsaTour.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

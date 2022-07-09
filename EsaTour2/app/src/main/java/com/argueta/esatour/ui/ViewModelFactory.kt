@@ -2,9 +2,9 @@ package com.argueta.esatour.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.argueta.esatour.DestinationViewModel
 import com.argueta.esatour.repository.DestinationRepository
 import com.argueta.esatour.repository.LoginRepository
+import com.argueta.esatour.ui.destination.DestinationViewModel
 import com.argueta.esatour.ui.login.LoginViewModel
 
 class ViewModelFactory<R>(private val repository: R) :
